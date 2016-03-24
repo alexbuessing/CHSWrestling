@@ -7,14 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884B4C639DB50315917544F3 /* Pods_Wrestling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BEE36E5913574EED3FB912 /* Pods_Wrestling.framework */; };
 		FA1D50601C891A6B00611310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D505F1C891A6B00611310 /* AppDelegate.swift */; };
 		FA1D50621C891A6B00611310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D50611C891A6B00611310 /* ViewController.swift */; };
 		FA1D50651C891A6B00611310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50631C891A6B00611310 /* Main.storyboard */; };
 		FA1D50671C891A6B00611310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50661C891A6B00611310 /* Assets.xcassets */; };
 		FA1D506A1C891A6B00611310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50681C891A6B00611310 /* LaunchScreen.storyboard */; };
+		FA1D50EE1C91BC1A00611310 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50E51C91BC1A00611310 /* Ubuntu-B.ttf */; };
+		FA1D50EF1C91BC1A00611310 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50E61C91BC1A00611310 /* Ubuntu-BI.ttf */; };
+		FA1D50F01C91BC1A00611310 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50E71C91BC1A00611310 /* Ubuntu-C.ttf */; };
+		FA1D50F11C91BC1A00611310 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50E81C91BC1A00611310 /* Ubuntu-L.ttf */; };
+		FA1D50F21C91BC1A00611310 /* Ubuntu-LI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50E91C91BC1A00611310 /* Ubuntu-LI.ttf */; };
+		FA1D50F31C91BC1A00611310 /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50EA1C91BC1A00611310 /* Ubuntu-M.ttf */; };
+		FA1D50F41C91BC1A00611310 /* Ubuntu-MI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50EB1C91BC1A00611310 /* Ubuntu-MI.ttf */; };
+		FA1D50F51C91BC1A00611310 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50EC1C91BC1A00611310 /* Ubuntu-R.ttf */; };
+		FA1D50F61C91BC1A00611310 /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA1D50ED1C91BC1A00611310 /* Ubuntu-RI.ttf */; };
+		FA1D50F81C91C21F00611310 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D50F71C91C21F00611310 /* MaterialView.swift */; };
+		FA1D50FB1C91C2D400611310 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D50FA1C91C2D400611310 /* Constants.swift */; };
+		FA1D50FD1C91D85D00611310 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D50FC1C91D85D00611310 /* MaterialButton.swift */; };
+		FA1D51011C91E55800611310 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51001C91E55800611310 /* MaterialTextField.swift */; };
+		FA1D51061C925CEF00611310 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D51031C925CEF00611310 /* Bolts.framework */; };
+		FA1D51071C925CEF00611310 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D51041C925CEF00611310 /* FBSDKCoreKit.framework */; };
+		FA1D51081C925CEF00611310 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D51051C925CEF00611310 /* FBSDKLoginKit.framework */; };
+		FA1D510A1C932CB600611310 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51091C932CB600611310 /* FeedVC.swift */; };
+		FA1D510C1C93338D00611310 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D510B1C93338D00611310 /* PostCell.swift */; };
+		FA1D510F1C933ABE00611310 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D510E1C933ABE00611310 /* DataService.swift */; };
+		FA1D51131C946D4100611310 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51121C946D4100611310 /* Post.swift */; };
+		FA1D51351C9731ED00611310 /* CoachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51341C9731ED00611310 /* CoachesVC.swift */; };
+		FA1D51371C97403000611310 /* CoachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51361C97403000611310 /* CoachCell.swift */; };
+		FA1D51391C97585000611310 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51381C97585000611310 /* Coach.swift */; };
+		FA93206B1C99AF8300644C34 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206A1C99AF8300644C34 /* ProfileVC.swift */; };
+		FA93206D1C99D51C00644C34 /* MaterialImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206C1C99D51C00644C34 /* MaterialImageView.swift */; };
+		FA93206F1C9A13E200644C34 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206E1C9A13E200644C34 /* Player.swift */; };
+		FA9320711C9A28B400644C34 /* RosterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320701C9A28B400644C34 /* RosterVC.swift */; };
+		FA9320731C9A2D6600644C34 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320721C9A2D6600644C34 /* PlayerCell.swift */; };
+		FA9320751C9CB41F00644C34 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320741C9CB41F00644C34 /* PreferencesVC.swift */; };
+		FA9320771C9EFDE000644C34 /* AwardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320761C9EFDE000644C34 /* AwardsVC.swift */; };
+		FA9320971CA03AC900644C34 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320961CA03AC900644C34 /* HeaderCell.swift */; };
+		FA93209B1CA06EAE00644C34 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209A1CA06EAE00644C34 /* Award.swift */; };
+		FA93209D1CA0822B00644C34 /* AwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209C1CA0822B00644C34 /* AwardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A0924F0ED09E84A5BB55BB /* Pods-Wrestling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wrestling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wrestling/Pods-Wrestling.debug.xcconfig"; sourceTree = "<group>"; };
+		5EBC14E07829691B3EF4228F /* Pods-Wrestling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wrestling.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wrestling/Pods-Wrestling.release.xcconfig"; sourceTree = "<group>"; };
+		F3BEE36E5913574EED3FB912 /* Pods_Wrestling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wrestling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1D505C1C891A6B00611310 /* Wrestling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wrestling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1D505F1C891A6B00611310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1D50611C891A6B00611310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +59,39 @@
 		FA1D50661C891A6B00611310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1D50691C891A6B00611310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1D506B1C891A6B00611310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1D50E51C91BC1A00611310 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		FA1D50E61C91BC1A00611310 /* Ubuntu-BI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BI.ttf"; sourceTree = "<group>"; };
+		FA1D50E71C91BC1A00611310 /* Ubuntu-C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-C.ttf"; sourceTree = "<group>"; };
+		FA1D50E81C91BC1A00611310 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		FA1D50E91C91BC1A00611310 /* Ubuntu-LI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LI.ttf"; sourceTree = "<group>"; };
+		FA1D50EA1C91BC1A00611310 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
+		FA1D50EB1C91BC1A00611310 /* Ubuntu-MI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MI.ttf"; sourceTree = "<group>"; };
+		FA1D50EC1C91BC1A00611310 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		FA1D50ED1C91BC1A00611310 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-RI.ttf"; sourceTree = "<group>"; };
+		FA1D50F71C91C21F00611310 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		FA1D50FA1C91C2D400611310 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA1D50FC1C91D85D00611310 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		FA1D51001C91E55800611310 /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		FA1D51031C925CEF00611310 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		FA1D51041C925CEF00611310 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		FA1D51051C925CEF00611310 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		FA1D51091C932CB600611310 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		FA1D510B1C93338D00611310 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FA1D510E1C933ABE00611310 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FA1D51121C946D4100611310 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FA1D51341C9731ED00611310 /* CoachesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachesVC.swift; sourceTree = "<group>"; };
+		FA1D51361C97403000611310 /* CoachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachCell.swift; sourceTree = "<group>"; };
+		FA1D51381C97585000611310 /* Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
+		FA93206A1C99AF8300644C34 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		FA93206C1C99D51C00644C34 /* MaterialImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImageView.swift; sourceTree = "<group>"; };
+		FA93206E1C9A13E200644C34 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		FA9320701C9A28B400644C34 /* RosterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterVC.swift; sourceTree = "<group>"; };
+		FA9320721C9A2D6600644C34 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		FA9320741C9CB41F00644C34 /* PreferencesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
+		FA9320761C9EFDE000644C34 /* AwardsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardsVC.swift; sourceTree = "<group>"; };
+		FA9320961CA03AC900644C34 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		FA93209A1CA06EAE00644C34 /* Award.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		FA93209C1CA0822B00644C34 /* AwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +99,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D51061C925CEF00611310 /* Bolts.framework in Frameworks */,
+				FA1D51071C925CEF00611310 /* FBSDKCoreKit.framework in Frameworks */,
+				FA1D51081C925CEF00611310 /* FBSDKLoginKit.framework in Frameworks */,
+				884B4C639DB50315917544F3 /* Pods_Wrestling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DC608B5B9F21348698BB73B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3BEE36E5913574EED3FB912 /* Pods_Wrestling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1A1826B11F466B19B5782A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04A0924F0ED09E84A5BB55BB /* Pods-Wrestling.debug.xcconfig */,
+				5EBC14E07829691B3EF4228F /* Pods-Wrestling.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA1D50531C891A6B00611310 = {
 			isa = PBXGroup;
 			children = (
 				FA1D505E1C891A6B00611310 /* Wrestling */,
 				FA1D505D1C891A6B00611310 /* Products */,
+				CF1A1826B11F466B19B5782A /* Pods */,
+				3DC608B5B9F21348698BB73B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +147,103 @@
 		FA1D505E1C891A6B00611310 /* Wrestling */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D510D1C933AAB00611310 /* Services */,
+				FA1D50F91C91C2C500611310 /* Util */,
+				FA1D50E41C91BB2200611310 /* Resources */,
+				FA1D50721C891CBD00611310 /* Model */,
+				FA1D50731C891CC300611310 /* View */,
+				FA1D50711C891CB600611310 /* Controller */,
 				FA1D505F1C891A6B00611310 /* AppDelegate.swift */,
-				FA1D50611C891A6B00611310 /* ViewController.swift */,
 				FA1D50631C891A6B00611310 /* Main.storyboard */,
 				FA1D50661C891A6B00611310 /* Assets.xcassets */,
 				FA1D50681C891A6B00611310 /* LaunchScreen.storyboard */,
 				FA1D506B1C891A6B00611310 /* Info.plist */,
+				FA1D51021C925CD000611310 /* Frameworks */,
 			);
 			path = Wrestling;
+			sourceTree = "<group>";
+		};
+		FA1D50711C891CB600611310 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D50611C891A6B00611310 /* ViewController.swift */,
+				FA1D51091C932CB600611310 /* FeedVC.swift */,
+				FA1D51341C9731ED00611310 /* CoachesVC.swift */,
+				FA93206A1C99AF8300644C34 /* ProfileVC.swift */,
+				FA9320701C9A28B400644C34 /* RosterVC.swift */,
+				FA9320741C9CB41F00644C34 /* PreferencesVC.swift */,
+				FA9320761C9EFDE000644C34 /* AwardsVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FA1D50721C891CBD00611310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D51121C946D4100611310 /* Post.swift */,
+				FA1D51381C97585000611310 /* Coach.swift */,
+				FA93206E1C9A13E200644C34 /* Player.swift */,
+				FA93209A1CA06EAE00644C34 /* Award.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA1D50731C891CC300611310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D50F71C91C21F00611310 /* MaterialView.swift */,
+				FA1D50FC1C91D85D00611310 /* MaterialButton.swift */,
+				FA1D51001C91E55800611310 /* MaterialTextField.swift */,
+				FA1D510B1C93338D00611310 /* PostCell.swift */,
+				FA1D51361C97403000611310 /* CoachCell.swift */,
+				FA93206C1C99D51C00644C34 /* MaterialImageView.swift */,
+				FA9320721C9A2D6600644C34 /* PlayerCell.swift */,
+				FA9320961CA03AC900644C34 /* HeaderCell.swift */,
+				FA93209C1CA0822B00644C34 /* AwardCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FA1D50E41C91BB2200611310 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D50E51C91BC1A00611310 /* Ubuntu-B.ttf */,
+				FA1D50E61C91BC1A00611310 /* Ubuntu-BI.ttf */,
+				FA1D50E71C91BC1A00611310 /* Ubuntu-C.ttf */,
+				FA1D50E81C91BC1A00611310 /* Ubuntu-L.ttf */,
+				FA1D50E91C91BC1A00611310 /* Ubuntu-LI.ttf */,
+				FA1D50EA1C91BC1A00611310 /* Ubuntu-M.ttf */,
+				FA1D50EB1C91BC1A00611310 /* Ubuntu-MI.ttf */,
+				FA1D50EC1C91BC1A00611310 /* Ubuntu-R.ttf */,
+				FA1D50ED1C91BC1A00611310 /* Ubuntu-RI.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FA1D50F91C91C2C500611310 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D50FA1C91C2D400611310 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FA1D51021C925CD000611310 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D51031C925CEF00611310 /* Bolts.framework */,
+				FA1D51041C925CEF00611310 /* FBSDKCoreKit.framework */,
+				FA1D51051C925CEF00611310 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA1D510D1C933AAB00611310 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D510E1C933ABE00611310 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA1D506E1C891A6B00611310 /* Build configuration list for PBXNativeTarget "Wrestling" */;
 			buildPhases = (
+				5881FFC16281F8791FC4BD74 /* Check Pods Manifest.lock */,
 				FA1D50581C891A6B00611310 /* Sources */,
 				FA1D50591C891A6B00611310 /* Frameworks */,
 				FA1D505A1C891A6B00611310 /* Resources */,
+				EA4D041A5D02A9A4D33153E3 /* Embed Pods Frameworks */,
+				B419F7F659FC038A4E7BD01D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +281,7 @@
 				TargetAttributes = {
 					FA1D505B1C891A6B00611310 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 7PT4PEMTAU;
 					};
 				};
 			};
@@ -122,21 +308,99 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D50F61C91BC1A00611310 /* Ubuntu-RI.ttf in Resources */,
 				FA1D506A1C891A6B00611310 /* LaunchScreen.storyboard in Resources */,
+				FA1D50F41C91BC1A00611310 /* Ubuntu-MI.ttf in Resources */,
+				FA1D50EF1C91BC1A00611310 /* Ubuntu-BI.ttf in Resources */,
 				FA1D50671C891A6B00611310 /* Assets.xcassets in Resources */,
+				FA1D50F01C91BC1A00611310 /* Ubuntu-C.ttf in Resources */,
+				FA1D50EE1C91BC1A00611310 /* Ubuntu-B.ttf in Resources */,
+				FA1D50F11C91BC1A00611310 /* Ubuntu-L.ttf in Resources */,
+				FA1D50F51C91BC1A00611310 /* Ubuntu-R.ttf in Resources */,
+				FA1D50F31C91BC1A00611310 /* Ubuntu-M.ttf in Resources */,
+				FA1D50F21C91BC1A00611310 /* Ubuntu-LI.ttf in Resources */,
 				FA1D50651C891A6B00611310 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5881FFC16281F8791FC4BD74 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B419F7F659FC038A4E7BD01D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wrestling/Pods-Wrestling-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4D041A5D02A9A4D33153E3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wrestling/Pods-Wrestling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA1D50581C891A6B00611310 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9320751C9CB41F00644C34 /* PreferencesVC.swift in Sources */,
+				FA9320711C9A28B400644C34 /* RosterVC.swift in Sources */,
+				FA1D51371C97403000611310 /* CoachCell.swift in Sources */,
+				FA93209B1CA06EAE00644C34 /* Award.swift in Sources */,
+				FA1D510F1C933ABE00611310 /* DataService.swift in Sources */,
+				FA9320771C9EFDE000644C34 /* AwardsVC.swift in Sources */,
+				FA93206B1C99AF8300644C34 /* ProfileVC.swift in Sources */,
+				FA1D51351C9731ED00611310 /* CoachesVC.swift in Sources */,
+				FA93206F1C9A13E200644C34 /* Player.swift in Sources */,
+				FA1D51391C97585000611310 /* Coach.swift in Sources */,
+				FA1D51011C91E55800611310 /* MaterialTextField.swift in Sources */,
+				FA1D510A1C932CB600611310 /* FeedVC.swift in Sources */,
+				FA1D50F81C91C21F00611310 /* MaterialView.swift in Sources */,
 				FA1D50621C891A6B00611310 /* ViewController.swift in Sources */,
+				FA9320971CA03AC900644C34 /* HeaderCell.swift in Sources */,
 				FA1D50601C891A6B00611310 /* AppDelegate.swift in Sources */,
+				FA9320731C9A2D6600644C34 /* PlayerCell.swift in Sources */,
+				FA1D50FB1C91C2D400611310 /* Constants.swift in Sources */,
+				FA93206D1C99D51C00644C34 /* MaterialImageView.swift in Sources */,
+				FA93209D1CA0822B00644C34 /* AwardCell.swift in Sources */,
+				FA1D50FD1C91D85D00611310 /* MaterialButton.swift in Sources */,
+				FA1D510C1C93338D00611310 /* PostCell.swift in Sources */,
+				FA1D51131C946D4100611310 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +509,15 @@
 		};
 		FA1D506F1C891A6B00611310 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A0924F0ED09E84A5BB55BB /* Pods-Wrestling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wrestling",
+				);
 				INFOPLIST_FILE = Wrestling/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buessing.Wrestling;
@@ -256,8 +527,15 @@
 		};
 		FA1D50701C891A6B00611310 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EBC14E07829691B3EF4228F /* Pods-Wrestling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wrestling",
+				);
 				INFOPLIST_FILE = Wrestling/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buessing.Wrestling;
@@ -284,6 +562,7 @@
 				FA1D50701C891A6B00611310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
