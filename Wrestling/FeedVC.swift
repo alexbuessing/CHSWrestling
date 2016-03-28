@@ -9,16 +9,20 @@
 import UIKit
 import Firebase
 import Alamofire
+import MBProgressHUD
 
 class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet var postView: MaterialView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var postField: MaterialTextField!
     @IBOutlet var imageSelectImg: UIImageView!
     @IBOutlet var userName: UILabel!
+    
     var posts = [Post]()
     var imageSelected = false
     static var imageCache = NSCache()
+    var loading = false
     
     var imagePicker: UIImagePickerController!
     
@@ -67,18 +71,18 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 
                 for snap in snapshots.reverse() {
                     
-                    //print("SNAP: \(snap)")
-                    
                     if let awardDic = snap.value as? Dictionary<String, AnyObject> {
                         let value = Award(dictionary: awardDic)
                         self.divisionArray.append(value)
                     }
                 }
-                
             }
             self.items[0] = self.divisionArray
-            //print(self.items[0][4].name)
         })
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -137,6 +141,18 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         
     }
     
+    private func showLoadingHUD() {
+        let hud = MBProgressHUD.showHUDAddedTo(tableView, animated: true)
+        hud.opacity = 0.6
+        //hud.labelText = "Loading..."
+        loading = true
+    }
+    
+    private func hideLoadingHUD() {
+        MBProgressHUD.hideAllHUDsForView(tableView, animated: true)
+        loading = false
+    }
+    
     @IBAction func makePost(sender: AnyObject) {
         
         if let txt = postField.text where txt != "" {
@@ -148,8 +164,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 let keyData = "59DERUWY4e7ad4a26bedc73667d1847f36c7c5fd".dataUsingEncoding(NSUTF8StringEncoding)!
                 let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
                 
+                self.showLoadingHUD()
                 Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
-                    
                         multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
                         multipartFormData.appendBodyPart(data: keyData, name: "key")
                         multipartFormData.appendBodyPart(data: keyJSON, name: "format")
@@ -171,6 +187,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                             })
                         case .Failure(let error):
                             print(error)
+                           self.hideLoadingHUD()
                         }
                         
                 }
@@ -199,6 +216,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         imageSelected = false
         
         tableView.reloadData()
+        self.hideLoadingHUD()
         
     }
     

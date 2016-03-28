@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     } else {
                         print("Logged in! \(authData)")
                         
-                        let user = ["provider": authData.provider!, "blah": "test"]
+                        let user = ["provider": authData.provider!, "username": ""]
                         DataService.ds.createFirebaseUser(authData.uid, user: user)
                         
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
@@ -66,13 +66,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             self.performSegueWithIdentifier("profileSegue", sender: nil)
                         }
                     }
-                    
                 })
-                
             }
-            
         }
-        
     }
     
     @IBAction func attemptLogin(sender: UIButton!) {
@@ -96,7 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 
                                 DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                                     
-                                    let user = ["provider": authData.provider!, "blah": "emailTest"]
+                                    let user = ["provider": authData.provider!, "username": ""]
                                     DataService.ds.createFirebaseUser(authData.uid, user: user)
                                     
                                 })

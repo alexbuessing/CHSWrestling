@@ -329,7 +329,7 @@
                                     <constraint firstItem="9qC-Ha-7Xj" firstAttribute="top" secondItem="9EP-E9-PBe" secondAttribute="topMargin" id="hFy-2g-Q8T"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="448" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dph-TQ-c9z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="448" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dph-TQ-c9z">
                                 <rect key="frame" x="5" y="121" width="590" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -349,7 +349,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipD-9u-Rgk">
                                                                     <rect key="frame" x="0.0" y="0.0" width="574" height="50"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowbird" translatesAutoresizingMaskIntoConstraints="NO" id="pUa-Gq-QLn">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="pUa-Gq-QLn">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="50" id="Rsx-3d-isl"/>
@@ -430,7 +430,7 @@
                                             <outlet property="likeImage" destination="DSM-Ef-jXP" id="G1o-Bh-d57"/>
                                             <outlet property="likesLbl" destination="0Tp-rl-MgE" id="htl-Ab-7Lb"/>
                                             <outlet property="mainImg" destination="v6y-tz-xq8" id="L2z-au-eb9"/>
-                                            <outlet property="profileImg" destination="pUa-Gq-QLn" id="lX0-Jx-p9K"/>
+                                            <outlet property="profileImg" destination="pUa-Gq-QLn" id="l0X-3J-BNb"/>
                                             <outlet property="userName" destination="OG5-aG-76u" id="Two-1K-tAI"/>
                                         </connections>
                                     </tableViewCell>
@@ -463,6 +463,7 @@
                     <connections>
                         <outlet property="imageSelectImg" destination="Hox-jy-Uwk" id="0k6-R2-YWb"/>
                         <outlet property="postField" destination="BRB-N7-Moz" id="QVe-nq-dJT"/>
+                        <outlet property="postView" destination="9EP-E9-PBe" id="b1i-Pp-Rvh"/>
                         <outlet property="tableView" destination="dph-TQ-c9z" id="MSL-sK-n9T"/>
                         <segue destination="r3X-sH-r1B" kind="show" identifier="backToSettings" id="zZr-LB-EvF"/>
                     </connections>
@@ -509,7 +510,7 @@
                                     <constraint firstAttribute="height" constant="64" id="u7f-lH-XaA"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jOL-Vi-zxw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jOL-Vi-zxw">
                                 <rect key="frame" x="5" y="69" width="590" height="477"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zs8-b0-9oI">
@@ -772,7 +773,7 @@
                                     <constraint firstItem="dct-h9-BF7" firstAttribute="centerX" secondItem="vuQ-4e-RkT" secondAttribute="centerX" id="Vea-MI-VoW"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cB5-JT-t6i">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cB5-JT-t6i">
                                 <rect key="frame" x="5" y="66" width="590" height="483"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1129,7 +1130,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbD-8l-WNr" customClass="MaterialView" customModule="Wrestling" customModuleProvider="target">
                                 <rect key="frame" x="12" y="76" width="576" height="512"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-pe-WTp" customClass="MaterialImageView" customModule="Wrestling" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-pe-WTp" customClass="MaterialImageView" customModule="Wrestling" customModuleProvider="target">
                                         <rect key="frame" x="188" y="8" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="AuF-fX-dhh"/>
@@ -1278,7 +1279,6 @@
         <image name="FBIcon" width="350" height="350"/>
         <image name="HeartIconEmpty" width="36" height="30"/>
         <image name="HomeIcon" width="39" height="37"/>
-        <image name="Snowbird" width="692" height="692"/>
         <image name="TeamIcon" width="44" height="36"/>
         <image name="WhistleIcon" width="42" height="36"/>
         <image name="tide" width="553" height="489"/>

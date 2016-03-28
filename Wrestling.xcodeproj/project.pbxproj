@@ -46,6 +46,7 @@
 		FA9320971CA03AC900644C34 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9320961CA03AC900644C34 /* HeaderCell.swift */; };
 		FA93209B1CA06EAE00644C34 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209A1CA06EAE00644C34 /* Award.swift */; };
 		FA93209D1CA0822B00644C34 /* AwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209C1CA0822B00644C34 /* AwardCell.swift */; };
+		FA9C72921CA6DD4E003CE354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C72911CA6DD4E003CE354 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		FA9320961CA03AC900644C34 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		FA93209A1CA06EAE00644C34 /* Award.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		FA93209C1CA0822B00644C34 /* AwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardCell.swift; sourceTree = "<group>"; };
+		FA9C72911CA6DD4E003CE354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				FA1D51381C97585000611310 /* Coach.swift */,
 				FA93206E1C9A13E200644C34 /* Player.swift */,
 				FA93209A1CA06EAE00644C34 /* Award.swift */,
+				FA9C72911CA6DD4E003CE354 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				FA1D50FB1C91C2D400611310 /* Constants.swift in Sources */,
 				FA93206D1C99D51C00644C34 /* MaterialImageView.swift in Sources */,
 				FA93209D1CA0822B00644C34 /* AwardCell.swift in Sources */,
+				FA9C72921CA6DD4E003CE354 /* User.swift in Sources */,
 				FA1D50FD1C91D85D00611310 /* MaterialButton.swift in Sources */,
 				FA1D510C1C93338D00611310 /* PostCell.swift in Sources */,
 				FA1D51131C946D4100611310 /* Post.swift in Sources */,

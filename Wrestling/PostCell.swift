@@ -12,16 +12,18 @@ import Firebase
 
 class PostCell: UITableViewCell {
 
-    @IBOutlet var profileImg: UIImageView!
     @IBOutlet var mainImg: UIImageView!
     @IBOutlet var descriptionText: UITextView!
     @IBOutlet var likesLbl: UILabel!
     @IBOutlet var likeImage: UIImageView!
     @IBOutlet var userName: UILabel!
+    @IBOutlet var profileImg: UIImageView!
     
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
+    var defaults = NSUserDefaults.standardUserDefaults()
+    var profileImage: UIImage!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +48,12 @@ class PostCell: UITableViewCell {
         self.post = post
         userName.text = String(NSUserDefaults.standardUserDefaults().valueForKey("username")!)
         
+        if let data = defaults.valueForKey("profileImage") {
+            profileImg.image = UIImage(data: data as! NSData)
+        } else {
+            profileImg.image = UIImage(named: "EmptyProfile")
+        }
+        
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
@@ -66,7 +74,6 @@ class PostCell: UITableViewCell {
                     } else {
                         print(error.debugDescription)
                     }
-                    
                 })
             }
             
@@ -82,9 +89,7 @@ class PostCell: UITableViewCell {
             } else {
                 self.likeImage.image = UIImage(named: "HeartIconFilled")
             }
-        
         })
-        
     }
     
     
@@ -102,11 +107,7 @@ class PostCell: UITableViewCell {
                 self.likeImage.image = UIImage(named: "HeartIconEmpty")
                 self.post.adjustLikes(false)
                 self.likeRef.removeValue()
-                
             }
-            
         })
-        
     }
-    
 }
