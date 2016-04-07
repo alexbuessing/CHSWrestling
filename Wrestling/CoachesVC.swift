@@ -8,47 +8,52 @@
 
 import UIKit
 import Firebase
+import MBProgressHUD
 
 class CoachesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     
     var coach = [Coach]()
+    var network = Func()
+    var loading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-        
-        DataService.ds.REF_COACH.queryOrderedByChild("order").observeEventType(.Value, withBlock: {snapshot in
-            
-            self.coach = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                
-                for snap in snapshots {
-                    
-                    if let postDic = snap.value as? Dictionary<String, AnyObject> {
-                        
-                        let key = snap.key
-                        let coach = Coach(postKey: key, dictionary: postDic)
-                        self.coach.append(coach)
-                        
-                    }
-                    
-                }
-                
-            }
-            self.tableView.reloadData()
-        })
+        tableView.userInteractionEnabled = true
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        tableView.userInteractionEnabled = true
+        
+        if !network.connectedToNetwork() {
+            showErrorAlert("No Network Connection", msg: "Information may not be up to date. Please check your network connection.")
+        }
+        
+            DataService.ds.REF_COACH.queryOrderedByChild("order").observeEventType(.Value, withBlock: {snapshot in
+            
+                self.coach = []
+            
+                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                    for snap in snapshots {
+                    
+                        if let postDic = snap.value as? Dictionary<String, AnyObject> {
+                        
+                            let key = snap.key
+                            let coach = Coach(postKey: key, dictionary: postDic)
+                            self.coach.append(coach)
+                        
+                        }
+                    
+                    }
+                
+                }
+                self.tableView.reloadData()
+            })
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,6 +95,27 @@ class CoachesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 
             }
         }
+    }
+    
+    func showErrorAlert(title: String, msg: String) {
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    private func showLoadingHUD() {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.graceTime = 0.5
+        hud.opacity = 0.6
+        loading = true
+    }
+    
+    private func hideLoadingHUD() {
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        loading = false
     }
 
 }

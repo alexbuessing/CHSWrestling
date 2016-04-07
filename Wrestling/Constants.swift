@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
 

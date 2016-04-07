@@ -24,6 +24,16 @@ class DataService {
     private var _REF_STATE = Firebase(url: "\(URL_BASE)/state")
     private var _REF_NEWENGLAND = Firebase(url: "\(URL_BASE)/newengland")
     private var _REF_HOF = Firebase(url: "\(URL_BASE)/hof")
+    private var _REF_EVENTS = Firebase(url: "\(URL_BASE)/events")
+    private var _REF_APP_MANAGERS = Firebase(url: "\(URL_BASE)/appmanagers")
+    
+    var REF_APP_MANAGERS: Firebase {
+        return _REF_APP_MANAGERS
+    }
+    
+    var REF_EVENTS: Firebase {
+        return _REF_EVENTS
+    }
     
     var REF_DIVISION: Firebase {
         return _REF_DIVISION

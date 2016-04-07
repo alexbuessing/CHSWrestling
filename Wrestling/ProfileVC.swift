@@ -49,7 +49,6 @@ class ProfileVC: UIViewController {
     @IBAction func backButtonPressed(sender: AnyObject) {
         
         biography.hidden = true
-        //performSegueWithIdentifier("showCoaches", sender: nil)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

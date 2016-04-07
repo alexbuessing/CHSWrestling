@@ -17,6 +17,29 @@ class Post {
     private var _username: String!
     private var _postKey: String!
     private var _postRef: Firebase!
+    private var _likeRef: Firebase!
+    private var _deletePostRef: Firebase!
+    private var _userID: AnyObject!
+    
+    var userID: AnyObject {
+        return _userID
+    }
+    
+    var likeRef: Firebase {
+        get {
+            return _likeRef
+        } set (newValue) {
+            _likeRef = newValue
+        }
+    }
+    
+    var deletePostRef: Firebase {
+        get {
+            return _deletePostRef
+        } set (newValue) {
+            _deletePostRef = newValue
+        }
+    }
     
     var postDescription: String {
         return _postDescription
@@ -60,6 +83,14 @@ class Post {
         
         if let desc = dictionary["description"] as? String {
             self._postDescription = desc
+        }
+        
+        if let user = dictionary["username"] as? String {
+            self._username = user
+        }
+        
+        if let ID = dictionary["userID"] {
+            self._userID = ID
         }
         
         self._postRef = DataService.ds.REF_POSTS.childByAppendingPath(self._postKey)

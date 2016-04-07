@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var password: MaterialTextField!
     
     var defaults = NSUserDefaults.standardUserDefaults()
+    let network = Func()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let facebookLogin = FBSDKLoginManager()
         
+        if network.connectedToNetwork() {
         facebookLogin.logInWithReadPermissions( [ "email" ], fromViewController: self ) { ( facebookResult: FBSDKLoginManagerLoginResult!, facebookError: NSError!) -> Void in
             
             if facebookError != nil {
@@ -69,12 +71,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             }
         }
+        } else {
+            showErrorAlert("No Network Connection", msg: "Please check you network connection and try again.")
+        }
     }
     
     @IBAction func attemptLogin(sender: UIButton!) {
         
         if let email = emailAddress.text where email != "", let pwd = password.text where pwd != "" {
             
+            if network.connectedToNetwork() {
             DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                 
                 if error != nil {
@@ -117,6 +123,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             showErrorAlert("Email and Password Required", msg: "You must enter and email and a password")
+        }
+        } else {
+            showErrorAlert("No Network Connection", msg: "Please check you network connection and try again.")
         }
         
     }

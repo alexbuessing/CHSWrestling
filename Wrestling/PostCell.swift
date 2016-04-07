@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 import Firebase
 
+protocol Alert {
+    func showAlert(post: Post)
+}
+
 class PostCell: UITableViewCell {
 
     @IBOutlet var mainImg: UIImageView!
@@ -18,12 +22,16 @@ class PostCell: UITableViewCell {
     @IBOutlet var likeImage: UIImageView!
     @IBOutlet var userName: UILabel!
     @IBOutlet var profileImg: UIImageView!
+    @IBOutlet var editPostImg: UIImageView!
     
+    var delegate: Alert?
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
+    var postRef: Firebase!
     var defaults = NSUserDefaults.standardUserDefaults()
     var profileImage: UIImage!
+    var myPost: Post!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +40,11 @@ class PostCell: UITableViewCell {
         tap.numberOfTapsRequired = 1
         likeImage.addGestureRecognizer(tap)
         likeImage.userInteractionEnabled = true
+        
+        let delete = UITapGestureRecognizer(target: self, action: #selector(PostCell.deleteTapped(_:)))
+        delete.numberOfTapsRequired = 1
+        editPostImg.addGestureRecognizer(delete)
+        editPostImg.userInteractionEnabled = true
         
     }
     
@@ -44,9 +57,17 @@ class PostCell: UITableViewCell {
     }
     
     func configureCell(post: Post, img: UIImage?) {
-        
+
         self.post = post
-        userName.text = String(NSUserDefaults.standardUserDefaults().valueForKey("username")!)
+        userName.text = post.username
+        
+        let user = String(defaults.valueForKey(KEY_UID)!)
+
+        if user == String(post.userID) || checkIfManager(user) {
+            editPostImg.hidden = false
+        } else {
+            editPostImg.hidden = true
+        }
         
         if let data = defaults.valueForKey("profileImage") {
             profileImg.image = UIImage(data: data as! NSData)
@@ -54,6 +75,7 @@ class PostCell: UITableViewCell {
             profileImg.image = UIImage(named: "EmptyProfile")
         }
         
+        postRef = DataService.ds.REF_POSTS.childByAppendingPath(post.postKey)
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
@@ -92,10 +114,15 @@ class PostCell: UITableViewCell {
         })
     }
     
-    
+    func deleteTapped(sender: UITapGestureRecognizer) {
+
+        self.delegate?.showAlert(myPost)
+        
+    }
     
     func likeTapped(sender: UITapGestureRecognizer) {
         
+        //print(postRef)
         likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             
             if let _ = snapshot.value as? NSNull {
@@ -110,4 +137,21 @@ class PostCell: UITableViewCell {
             }
         })
     }
+    
+    func checkIfManager(user: String) -> Bool {
+        
+        let managerArray = defaults.valueForKey("managersArray") as! [String]
+        
+        for value in managerArray {
+            if value == user {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
 }
+
+
+

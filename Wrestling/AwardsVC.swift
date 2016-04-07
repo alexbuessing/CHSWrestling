@@ -19,6 +19,7 @@ class AwardsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var hallOfFameArray = [Award]()
     
     var items = [[Award]()]
+    var network = Func()
     
     @IBOutlet var tableView: UITableView!
     
@@ -29,8 +30,16 @@ class AwardsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.dataSource = self
         tableView.delegate = self
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
-        queryFirebase()
+        if !network.connectedToNetwork() {
+            showErrorAlert("No Network Connection", msg: "Information may not be up to date. Please check your network connection.")
+        }
+        
+            queryFirebase()
 
     }
     
@@ -157,6 +166,15 @@ class AwardsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             })
             
         })
+        
+    }
+    
+    func showErrorAlert(title: String, msg: String) {
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
         
     }
     

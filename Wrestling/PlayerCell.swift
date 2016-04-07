@@ -24,11 +24,15 @@ class PlayerCell: UICollectionViewCell {
         layer.borderColor = UIColor.blackColor().CGColor
     }
     
-    func configureCell(imageURL: String, name: String, weight: String, year: String, record: String) {
+    func configureCell(imageURL: String, name: String, weight: String, year: String, record: String, image: UIImage?) {
         
         playerName.text = "\(name), \(year)"
         playerWeight.text = weight
         playerRecord.text = record
+        
+        if image != nil {
+            self.playerImage.image = image
+        } else {
         
         request = Alamofire.request(.GET, imageURL).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, error in
             
@@ -40,7 +44,7 @@ class PlayerCell: UICollectionViewCell {
             }
             
         })
-        
+        }
     }
     
 }

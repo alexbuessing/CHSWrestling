@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tide" translatesAutoresizingMaskIntoConstraints="NO" id="XPy-1P-9cc">
-                                <rect key="frame" x="199" y="212" width="202" height="175"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TideLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="gv6-G5-pTa">
+                                <rect key="frame" x="199" y="204" width="202" height="192"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="202" id="Cf2-r6-1IP"/>
-                                    <constraint firstAttribute="height" constant="175" id="T7j-UN-WEB"/>
+                                    <constraint firstAttribute="height" constant="192" id="Gb3-8Q-u9n"/>
+                                    <constraint firstAttribute="width" constant="202" id="hBI-Iu-EwA"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.76576309970000001" green="0.01513803746" blue="0.10497668540000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="XPy-1P-9cc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Xd6-2X-Sw0"/>
-                            <constraint firstItem="XPy-1P-9cc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eBX-x2-h6X"/>
+                            <constraint firstItem="gv6-G5-pTa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9Ea-mG-DbP"/>
+                            <constraint firstItem="gv6-G5-pTa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zrK-Dc-8iE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tide" width="553" height="489"/>
+        <image name="TideLaunch" width="192" height="176"/>
     </resources>
 </document>

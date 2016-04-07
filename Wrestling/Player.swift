@@ -53,9 +53,7 @@ class Player {
     
     init(){}
     
-    init(postKey: String, dictionary: Dictionary<String, AnyObject>) {
-        
-        self._postKey = postKey
+    init(dictionary: Dictionary<String, AnyObject>) {
         
         if let name = dictionary["name"] as? String {
             self._name = name

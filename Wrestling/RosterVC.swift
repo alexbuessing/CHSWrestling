@@ -14,6 +14,8 @@ class RosterVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     @IBOutlet weak var collection: UICollectionView!
     
     var player = [Player]()
+    let network = Func()
+    static var imageCache = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,26 +23,32 @@ class RosterVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         collection.dataSource = self
         collection.delegate = self
         
-        DataService.ds.REF_PLAYER.queryOrderedByChild("order").observeEventType(.Value, withBlock: {snapshot in
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if !network.connectedToNetwork() {
+            showErrorAlert("No Network Connection", msg: "Information may not be up to date. Please check your network connection.")
+        }
+        
+            DataService.ds.REF_PLAYER.queryOrderedByChild("order").observeEventType(.Value, withBlock: {snapshot in
             
-            self.player = []
+                self.player = []
             
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
-                for snap in snapshots {
-                    
-                    if let postDic = snap.value as? Dictionary<String, AnyObject> {
+                    for snap in snapshots {
+
+                        if let postDic = snap.value as? Dictionary<String, AnyObject> {
                         
-                        let key = snap.key
-                        let play = Player(postKey: key, dictionary: postDic)
-                        self.player.append(play)
+                            let play = Player(dictionary: postDic)
+                            self.player.append(play)
                         
+                        }
                     }
-                    
                 }
-                
-            }
-            self.collection.reloadData()
+            
+                self.collection.reloadData()
         })
         
     }
@@ -67,11 +75,17 @@ class RosterVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        let student = player[indexPath.row]
+        
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("playerCell", forIndexPath: indexPath) as? PlayerCell {
             
-            let student = player[indexPath.row]
+            cell.request?.cancel()
             
-            cell.configureCell(student.imageURL, name: student.name, weight: student.weight, year: student.year, record: student.record)
+            var img: UIImage?
+            
+            img = RosterVC.imageCache.objectForKey(student.imageURL) as? UIImage
+            
+            cell.configureCell(student.imageURL, name: student.name, weight: student.weight, year: student.year, record: student.record, image: img)
             
             return cell
         } else {
@@ -80,4 +94,13 @@ class RosterVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         
     }
 
+    func showErrorAlert(title: String, msg: String) {
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
 }

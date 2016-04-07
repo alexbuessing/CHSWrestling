@@ -36,6 +36,9 @@
 		FA1D51351C9731ED00611310 /* CoachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51341C9731ED00611310 /* CoachesVC.swift */; };
 		FA1D51371C97403000611310 /* CoachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51361C97403000611310 /* CoachCell.swift */; };
 		FA1D51391C97585000611310 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D51381C97585000611310 /* Coach.swift */; };
+		FA6BC1951CB548650099F26E /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BC1941CB548650099F26E /* ScheduleVC.swift */; };
+		FA6BC1971CB548F90099F26E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BC1961CB548F90099F26E /* Event.swift */; };
+		FA6BC1991CB54BC30099F26E /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6BC1981CB54BC30099F26E /* ScheduleCell.swift */; };
 		FA93206B1C99AF8300644C34 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206A1C99AF8300644C34 /* ProfileVC.swift */; };
 		FA93206D1C99D51C00644C34 /* MaterialImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206C1C99D51C00644C34 /* MaterialImageView.swift */; };
 		FA93206F1C9A13E200644C34 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93206E1C9A13E200644C34 /* Player.swift */; };
@@ -47,6 +50,7 @@
 		FA93209B1CA06EAE00644C34 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209A1CA06EAE00644C34 /* Award.swift */; };
 		FA93209D1CA0822B00644C34 /* AwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93209C1CA0822B00644C34 /* AwardCell.swift */; };
 		FA9C72921CA6DD4E003CE354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C72911CA6DD4E003CE354 /* User.swift */; };
+		FA9C72A11CAD7EAE003CE354 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C72A01CAD7EAE003CE354 /* Func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,9 @@
 		FA1D51341C9731ED00611310 /* CoachesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachesVC.swift; sourceTree = "<group>"; };
 		FA1D51361C97403000611310 /* CoachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachCell.swift; sourceTree = "<group>"; };
 		FA1D51381C97585000611310 /* Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
+		FA6BC1941CB548650099F26E /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
+		FA6BC1961CB548F90099F26E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FA6BC1981CB54BC30099F26E /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		FA93206A1C99AF8300644C34 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		FA93206C1C99D51C00644C34 /* MaterialImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImageView.swift; sourceTree = "<group>"; };
 		FA93206E1C9A13E200644C34 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -94,6 +101,7 @@
 		FA93209A1CA06EAE00644C34 /* Award.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		FA93209C1CA0822B00644C34 /* AwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardCell.swift; sourceTree = "<group>"; };
 		FA9C72911CA6DD4E003CE354 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA9C72A01CAD7EAE003CE354 /* Func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 				FA9320701C9A28B400644C34 /* RosterVC.swift */,
 				FA9320741C9CB41F00644C34 /* PreferencesVC.swift */,
 				FA9320761C9EFDE000644C34 /* AwardsVC.swift */,
+				FA6BC1941CB548650099F26E /* ScheduleVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -187,6 +196,8 @@
 				FA93206E1C9A13E200644C34 /* Player.swift */,
 				FA93209A1CA06EAE00644C34 /* Award.swift */,
 				FA9C72911CA6DD4E003CE354 /* User.swift */,
+				FA9C72A01CAD7EAE003CE354 /* Func.swift */,
+				FA6BC1961CB548F90099F26E /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +214,7 @@
 				FA9320721C9A2D6600644C34 /* PlayerCell.swift */,
 				FA9320961CA03AC900644C34 /* HeaderCell.swift */,
 				FA93209C1CA0822B00644C34 /* AwardCell.swift */,
+				FA6BC1981CB54BC30099F26E /* ScheduleCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -390,11 +402,15 @@
 				FA93206B1C99AF8300644C34 /* ProfileVC.swift in Sources */,
 				FA1D51351C9731ED00611310 /* CoachesVC.swift in Sources */,
 				FA93206F1C9A13E200644C34 /* Player.swift in Sources */,
+				FA6BC1951CB548650099F26E /* ScheduleVC.swift in Sources */,
+				FA6BC1991CB54BC30099F26E /* ScheduleCell.swift in Sources */,
+				FA6BC1971CB548F90099F26E /* Event.swift in Sources */,
 				FA1D51391C97585000611310 /* Coach.swift in Sources */,
 				FA1D51011C91E55800611310 /* MaterialTextField.swift in Sources */,
 				FA1D510A1C932CB600611310 /* FeedVC.swift in Sources */,
 				FA1D50F81C91C21F00611310 /* MaterialView.swift in Sources */,
 				FA1D50621C891A6B00611310 /* ViewController.swift in Sources */,
+				FA9C72A11CAD7EAE003CE354 /* Func.swift in Sources */,
 				FA9320971CA03AC900644C34 /* HeaderCell.swift in Sources */,
 				FA1D50601C891A6B00611310 /* AppDelegate.swift in Sources */,
 				FA9320731C9A2D6600644C34 /* PlayerCell.swift in Sources */,
@@ -526,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buessing.Wrestling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,6 +561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buessing.Wrestling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
