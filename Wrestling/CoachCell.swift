@@ -25,21 +25,26 @@ class CoachCell: UITableViewCell {
         
     }
     
-    func configureCell(imageURL: String, name: String, title: String) {
+    func configureCell(imageURL: String, name: String, title: String, coachImg: UIImage?) {
         
         self.name.text = name
         self.title.text = title
         
-        request = Alamofire.request(.GET, imageURL).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, error in
+        
+        if coachImg != nil {
+            self.coachImage.image = coachImg
+        } else {
+            request = Alamofire.request(.GET, imageURL).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, error in
             
-            if error == nil {
-                let img = UIImage(data: data!)!
-                self.coachImage.image = img
-            } else {
-                print(error.debugDescription)
-            }
+                if error == nil {
+                    let img = UIImage(data: data!)!
+                    self.coachImage.image = img
+                } else {
+                    print(error.debugDescription)
+                }
             
-        })
+            })
+        }
         
     }
 

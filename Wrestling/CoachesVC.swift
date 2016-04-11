@@ -17,6 +17,7 @@ class CoachesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var coach = [Coach]()
     var network = Func()
     var loading = false
+    static var imageCache = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +69,15 @@ class CoachesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let post = coach[indexPath.row]
         
+        var img: UIImage?
+        
+        img = CoachesVC.imageCache.objectForKey(post.profileImg) as? UIImage
+        
         if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? CoachCell {
-            cell.configureCell(post.profileImg, name: post.name, title: post.title)
+            
+            cell.request?.cancel()
+            
+            cell.configureCell(post.profileImg, name: post.name, title: post.title, coachImg: img)
             return cell
         }
 

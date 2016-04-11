@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Alamofire
+import MBProgressHUD
 
 class PreferencesVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -117,6 +118,36 @@ class PreferencesVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             
             data = UIImageJPEGRepresentation(img, 0.3)
             defaults.setObject(data, forKey: "profileImage")
+            
+            let urlString = "https://post.imageshack.us/upload_api.php"
+            let url = NSURL(string: urlString)!
+            let imageData = UIImageJPEGRepresentation(img, 0.3)!
+            let keyData = "59DERUWY4e7ad4a26bedc73667d1847f36c7c5fd".dataUsingEncoding(NSUTF8StringEncoding)!
+            let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+            
+            Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                multipartFormData.appendBodyPart(data: keyData, name: "key")
+                multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                
+            }) { encodingResult in
+                //This is what happens when the encoding is done
+                
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON(completionHandler: { response in
+                        if let info = response.result.value as? Dictionary<String, AnyObject> {
+                            if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                if let imageLink = links["image_link"] as? String {
+                                    self.defaults.setObject(imageLink, forKey: "profileURL")
+                                }
+                            }
+                        }
+                    })
+                case .Failure(let error):
+                    print(error)
+                }
+            }
             
         }
         

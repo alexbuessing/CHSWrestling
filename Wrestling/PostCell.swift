@@ -56,7 +56,7 @@ class PostCell: UITableViewCell {
         mainImg.clipsToBounds = true
     }
     
-    func configureCell(post: Post, img: UIImage?) {
+    func configureCell(post: Post, img: UIImage?, profImg: UIImage?) {
 
         self.post = post
         userName.text = post.username
@@ -69,11 +69,31 @@ class PostCell: UITableViewCell {
             editPostImg.hidden = true
         }
         
-        if let data = defaults.valueForKey("profileImage") {
-            profileImg.image = UIImage(data: data as! NSData)
-        } else {
+        if post.profileURL == " " {
             profileImg.image = UIImage(named: "EmptyProfile")
+        } else {
+            if profImg != nil {
+                self.profileImg.image = profImg
+            } else {
+                request = Alamofire.request(.GET, post.profileURL!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, error in
+            
+                    if error == nil {
+                        let img = UIImage(data: data!)!
+                    self.profileImg.image = img
+                    } else {
+                    print(error.debugDescription)
+                    }
+                })
+            }
         }
+        
+        
+        
+//        if let data = defaults.valueForKey("profileImage") {
+//            profileImg.image = UIImage(data: data as! NSData)
+//        } else {
+//            profileImg.image = UIImage(named: "EmptyProfile")
+//        }
         
         postRef = DataService.ds.REF_POSTS.childByAppendingPath(post.postKey)
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)

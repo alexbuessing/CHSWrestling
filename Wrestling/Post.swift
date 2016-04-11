@@ -20,6 +20,11 @@ class Post {
     private var _likeRef: Firebase!
     private var _deletePostRef: Firebase!
     private var _userID: AnyObject!
+    private var _profileURL: String?
+    
+    var profileURL: String? {
+        return _profileURL
+    }
     
     var userID: AnyObject {
         return _userID
@@ -91,6 +96,10 @@ class Post {
         
         if let ID = dictionary["userID"] {
             self._userID = ID
+        }
+        
+        if let profileurl = dictionary["profileurl"] as? String {
+            self._profileURL = profileurl
         }
         
         self._postRef = DataService.ds.REF_POSTS.childByAppendingPath(self._postKey)

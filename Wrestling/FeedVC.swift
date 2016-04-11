@@ -23,6 +23,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     var appManagers = [String]()
     var imageSelected = false
     static var imageCache = NSCache()
+    static var profileImageCache = NSCache()
     var loading = false
     var network = Func()
     var defaults = NSUserDefaults.standardUserDefaults()
@@ -120,12 +121,19 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             cell.myPost = post
             
             var img: UIImage?
+            var profileImg: UIImage?
+            
+            if let profileURL = post.profileURL {
+                if profileURL != " " {
+                    profileImg = FeedVC.profileImageCache.objectForKey(profileURL) as? UIImage
+                }
+            }
             
             if let url = post.imageURL {
                 img = FeedVC.imageCache.objectForKey(url) as? UIImage
             }
 
-            cell.configureCell(post, img:  img)
+            cell.configureCell(post, img:  img, profImg: profileImg)
 
             return cell
         } else {
@@ -220,7 +228,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                                     if let info = response.result.value as? Dictionary<String, AnyObject> {
                                         if let links = info["links"] as? Dictionary<String, AnyObject> {
                                             if let imageLink = links["image_link"] as? String {
-                                                print("LINK: \(imageLink)")
                                                 self.postToFirePost(imageLink)
                                             }
                                         }
@@ -238,6 +245,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         } else {
             showErrorAlert("No Network Connection", msg: "Please check your network or internet connection.")
         }
+        
+        postField.resignFirstResponder()
     }
     
     
@@ -253,11 +262,16 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             "likes": 0,
             "sortNumber": timestamp,
             "username": username,
-            "userID": user
+            "userID": user,
+            "profileurl": " "
         ]
         
         if imgURL != nil {
             post["imageurl"] = imgURL!
+        }
+        
+        if let profileURL = defaults.objectForKey("profileURL") {
+            post["profileurl"] = String(profileURL)
         }
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
