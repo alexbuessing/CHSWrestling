@@ -28,11 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
         if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
             
-            if self.defaults.valueForKey("username") != nil {
-                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-            } else {
-                self.performSegueWithIdentifier("profileSegue", sender: nil)
-            }
+            loginSuccess()
         }
     }
 
@@ -56,17 +52,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     if error != nil {
                         print("Login failed. \(error)")
                     } else {
-                        print("Logged in! \(authData)")
+                        //print("Logged in! \(authData)")
                         
                         let user = ["provider": authData.provider!, "username": ""]
                         DataService.ds.createFirebaseUser(authData.uid, user: user)
                         
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                        if self.defaults.valueForKey("username") != nil {
-                            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                        } else {
-                            self.performSegueWithIdentifier("profileSegue", sender: nil)
-                        }
+                        self.loginSuccess()
                     }
                 })
             }
@@ -103,11 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                     
                                 })
                                 
-                                if self.defaults.valueForKey("username") != nil {
-                                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                                } else {
-                                    self.performSegueWithIdentifier("profileSegue", sender: nil)
-                                }
+                                self.loginSuccess()
                             }
                             
                         })
@@ -116,7 +104,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                     
                 } else {
-                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                    self.loginSuccess()
                 }
                 
             })
@@ -147,6 +135,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         emailAddress.resignFirstResponder()
         password.resignFirstResponder()
         return true
+    }
+    
+    func loginSuccess() {
+        if self.defaults.valueForKey("username") != nil {
+            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+        } else {
+            self.performSegueWithIdentifier("profileSegue", sender: nil)
+        }
     }
 
 }
